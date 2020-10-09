@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addButton, handleSubmit } from './actions';
+
 
 class FormAdd extends Component {
     render(){
         return(
             <div className="FormAdd">
                 <h2>Add a Smurf:</h2>
-                <form>
+                <form
+                    onSubmit={this.props.handleSubmit}
+                >
                     <input
                         type="text"
                         placeholder="name"
@@ -23,6 +28,7 @@ class FormAdd extends Component {
                     />
                     <button
                         type="submit"
+                        // onClick={()=>{addButton(smurf)}}
                     >
                         Add
                     </button>
@@ -32,4 +38,4 @@ class FormAdd extends Component {
     }
 }
 
-export default FormAdd;
+export default connect(null, {addButton, handleSubmit})(FormAdd);

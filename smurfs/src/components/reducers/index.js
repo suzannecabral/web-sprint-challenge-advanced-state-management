@@ -1,4 +1,5 @@
 //import actions { ACTION_NAME } from "../actions" (from the index file)
+import { HANDLE_SUBMIT } from '../actions'
 
 const initialState = {
     testKey:false,
@@ -23,7 +24,10 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
     switch(action.type){
         //cases go here
-
+        case HANDLE_SUBMIT:
+            console.log("Reducer: submitted form");
+            console.log("Form payload: ", action.payload);
+            return (state);
         default:return state;
     }
 }
