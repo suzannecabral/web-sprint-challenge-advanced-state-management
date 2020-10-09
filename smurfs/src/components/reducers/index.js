@@ -2,6 +2,7 @@
 
 const initialState = {
     testKey:false
+    
 }
 
 export const reducer = (state = initialState, action) => {
