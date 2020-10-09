@@ -23,7 +23,7 @@ class SmurfList extends Component {
             <div className="SmurfList">
                 <h2>The Village:</h2>
 
-                <>
+                <div className="list">
                 {
                     this.props.smurfData.map(
                         (smurf)=>{
@@ -33,7 +33,7 @@ class SmurfList extends Component {
                         }
                     )
                 }
-                </>
+                </div>
 
             </div>
         );

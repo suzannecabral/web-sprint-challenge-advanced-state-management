@@ -1,3 +1,13 @@
 .App {
   text-align: center;
 }
+
+.SmurfList .list{
+  display:flex;
+  flex-flow:row wrap;
+}
+
+.SmurfCard {
+  border: 1px solid #eaeaea;
+  width:200px;
+}
