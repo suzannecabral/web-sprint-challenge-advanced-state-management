@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addButton, handleSubmit } from './actions';
-
-
 class FormAdd extends Component {
+
     render(){
         return(
             <div className="FormAdd">
