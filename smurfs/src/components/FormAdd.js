@@ -14,6 +14,7 @@ class FormAdd extends Component {
         id:null,
     }
 
+    //updates local state with form values
     handleChange=(e)=>{
         const newState=
         {...this.state,
@@ -22,6 +23,7 @@ class FormAdd extends Component {
         this.setState(newState);
     }
 
+    //on submit, stops refresh and sends state value to dispatch
     handleSubmit=(e)=>{
         e.preventDefault();
         this.props.addSmurf(this.state);
