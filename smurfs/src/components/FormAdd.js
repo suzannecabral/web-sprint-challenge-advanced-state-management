@@ -1,33 +1,62 @@
-import React, { Component } from 'react';
+import React, { Component, setState } from 'react';
 import { connect } from 'react-redux';
-import { addButton, handleSubmit } from './actions';
+import { addSmurf } from './actions';
+
+
+
 class FormAdd extends Component {
+
+    //local state for form values
+    state={
+        name:"",
+        age:0,
+        height:0,
+        id:null,
+    }
+
+    handleChange=(e)=>{
+        const newState=
+        {...this.state,
+            [e.target.name]:e.target.value
+        }
+        this.setState(newState);
+    }
+
+    handleSubmit=(e)=>{
+        e.preventDefault();
+        this.props.addSmurf(this.state);
+    }
 
     render(){
         return(
             <div className="FormAdd">
                 <h2>Add a Smurf:</h2>
                 <form
-                    onSubmit={this.props.handleSubmit}
+                    onSubmit={this.handleSubmit}
                 >
                     <input
+                        id="name"
                         type="text"
                         placeholder="name"
-                        name="smurfName"
+                        name="name"
+                        onChange={this.handleChange}
                     />
                     <input
+                        id="age"
                         type="number"
                         placeholder="age"
-                        name="smurfAge"
+                        name="age"
+                        onChange={this.handleChange}
                     />
                     <input
+                        id="height"
                         type="number"
                         placeholder="height (cm)"
-                        name="smurfHeight"
+                        name="height"
+                        onChange={this.handleChange}
                     />
                     <button
                         type="submit"
-                        // onClick={()=>{addButton(smurf)}}
                     >
                         Add
                     </button>
@@ -37,4 +66,4 @@ class FormAdd extends Component {
     }
 }
 
-export default connect(null, {addButton, handleSubmit})(FormAdd);
+export default connect(null, {addSmurf})(FormAdd);

@@ -28,7 +28,10 @@ class SmurfList extends Component {
                     this.props.smurfData.map(
                         (smurf)=>{
                             return(
-                                <SmurfCard smurf={smurf} />
+                                <SmurfCard 
+                                    smurf={smurf}
+                                    key={smurf.id} 
+                                />
                             );
                         }
                     )
