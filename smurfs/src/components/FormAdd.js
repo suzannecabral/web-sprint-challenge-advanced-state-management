@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { addSmurf } from './actions';
 import shortid from 'shortid';
 
-
 class FormAdd extends Component {
 
     //local state for form values

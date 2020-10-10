@@ -22,7 +22,7 @@ class SmurfList extends Component {
         return(
             <div className="SmurfList">
                 <h2>The Village:</h2>
-
+                <p>next step: async GET from server to redux store, then map</p>
                 <div className="list">
                 {
                     this.props.smurfData.map(
