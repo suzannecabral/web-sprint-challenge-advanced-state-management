@@ -1,7 +1,7 @@
 import React, { Component, setState } from 'react';
 import { connect } from 'react-redux';
 import { addSmurf } from './actions';
-
+import shortid from 'shortid';
 
 
 class FormAdd extends Component {
@@ -26,7 +26,15 @@ class FormAdd extends Component {
     //on submit, stops refresh and sends state value to dispatch
     handleSubmit=(e)=>{
         e.preventDefault();
-        this.props.addSmurf(this.state);
+
+        const smurf = this.state;
+        const idSmurf={
+            ...smurf,
+                id:shortid.generate(),
+                height:smurf.height += "cm",
+        }
+
+        this.props.addSmurf(idSmurf);
     }
 
     render(){
